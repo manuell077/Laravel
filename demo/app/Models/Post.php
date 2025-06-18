@@ -6,21 +6,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Images extends Model
+class Post extends Model
 {
-    /** @use HasFactory<\Database\Factories\ImagenFactory> */
     use HasFactory;
+    
+        protected $fillable =[
+      
+        'titulo',
+        'cuerpo'
 
-    protected $fillable =[
-        'route',
-        'imageable_id',
-        'imageable_type'
     ];
 
-    public function imageable(): MorphTo
+
+    public function Postable(): MorphTo
     {
         return $this->morphTo();
     }
-
     
+     public function image(){
+         return $this->morphOne(Images::class, 'imageable');
+    }
+
+
 }

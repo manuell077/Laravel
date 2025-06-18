@@ -21,8 +21,8 @@ class ProductoFactory extends Factory
         
      return [
             'name' => fake()->name(),
-            'category_id' => Categoria::all()->random()->id,
-            'images_id' => Images::factory()->create()->id
+            'category_id' => Categoria::all()->random()->id
+            
 
      ];
         

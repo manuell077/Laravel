@@ -22,5 +22,9 @@ class Producto extends Model
          
         return $this->belongsTo(Categoria::class);
     }
+
+    public function images(){
+         return $this->morphMany(Images::class, 'imageable');
+    }
     
 }

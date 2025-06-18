@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(false);
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('images_id');
+             //$table->unsignedBigInteger('images_id');
             $table->foreign('category_id')->references('id')->on('categorias');// Relación con categorias
-            $table->foreign('images_id')->references('id')->on('images');
+            // $table->foreign('images_id')->references('id')->on('images');
             $table->timestamps();
         });
     }
